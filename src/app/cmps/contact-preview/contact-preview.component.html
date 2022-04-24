@@ -1,5 +1,4 @@
 <section class="contact-preview">
-    <h3>{{contact.name}}</h3>
-    <img src="https://robohash.org/{{contact._id}}?set=set2" alt="">
-
+  <h3 (click)="onSelect.emit(contact._id)">{{ contact.name }}</h3>
+  <img src="https://robohash.org/{{ contact._id }}?set=set2" alt="" />
 </section>

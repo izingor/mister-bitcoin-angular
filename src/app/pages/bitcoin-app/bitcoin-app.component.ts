@@ -10,9 +10,12 @@ import { ContactService } from 'src/app/services/contact.service';
 })
 export class BitcoinAppComponent implements OnInit, OnDestroy {
   constructor(private contactService: ContactService) {}
+
   subscription: Subscription;
   contacts: Contact[];
   contacts$: Observable<Contact[]>;
+
+  selectedContactId!: string;
 
   ngOnInit(): void {
     this.contactService.loadContacts();
