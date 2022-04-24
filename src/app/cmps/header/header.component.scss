@@ -1,3 +1,31 @@
-.main-header{
-    background-color: rgba(100, 194, 100, 0.432);
+
+.main-header {
+    background-color: rgba(54, 53, 53, 0.863);
+    display: flex;
+    align-items: center;
+
+    img {
+        height: 30px;
+        width: 30px;
+    }
+
+    .header-content {
+        width: 100%;
+        display: flex;
+        justify-content: space-between;
+        .nav-bar {
+        display: flex; 
+        align-items: center;
+
+            >li {
+                color: yellow ;
+                margin-left: 20px;
+
+                &:hover {
+                    cursor: pointer;
+                }
+            }
+        }
+    }
+
 }

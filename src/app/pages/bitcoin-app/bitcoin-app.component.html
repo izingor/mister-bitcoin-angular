@@ -1,4 +1,7 @@
 <section class = "app-height container">
 
-    <p>bitcoin-app works!</p>
+    <p>Hello</p>
+    <user></user>
+    <contacts *ngIf="contacts$" [contacts] = "contacts$ | async"></contacts>
+    
 </section>
