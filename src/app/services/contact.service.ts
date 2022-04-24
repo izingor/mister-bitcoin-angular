@@ -1,5 +1,9 @@
+import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Observable, BehaviorSubject, of } from 'rxjs';
+import { map } from 'rxjs/operators';
+import { Chart } from '../models/chart';
+
 // import { of } from 'rxjs';
 import { Contact } from '../models/contact';
 // import { ContactsFilter } from '../models/filter-by';
@@ -132,7 +136,7 @@ export class ContactService {
   private _contacts$ = new BehaviorSubject<Contact[]>([]);
   public contacts$ = this._contacts$.asObservable();
 
-  constructor() {}
+  constructor(private http: HttpClient) {}
 
   public loadContacts(filterBy = null): void {
     let contacts = this._contactsDb;
@@ -205,5 +209,14 @@ export class ContactService {
         contact.email.toLocaleLowerCase().includes(term)
       );
     });
+  }
+  public getRates() {
+    console.log('getting rates');
+
+    return this.http
+      .get<{ values: string[] }>(
+        'https://api.blockchain.info/charts/trade-volume?timespan=5months&format=json&cors=true'
+      )
+      .pipe(map((res) => res.values));
   }
 }

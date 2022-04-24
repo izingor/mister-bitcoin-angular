@@ -1,5 +1,5 @@
-<section class="contact-details">
-<button (click)="closeDetails.emit()">X</button>
+<section *ngIf="contact" class="contact-details">
+  <button (click)="closeDetails.emit()">X</button>
   <h2>{{ contact.name }}</h2>
   <h3>{{ contact.email }}</h3>
   <h3>{{ contact.phone }}</h3>
