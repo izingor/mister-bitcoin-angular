@@ -1,7 +1,4 @@
-<section class = "app-height container">
-
-    <p>Hello</p>
-    <user></user>
-    <contacts *ngIf="contacts$" [contacts] = "contacts$ | async"></contacts>
-    
+<section class="app-height container">
+  <user></user>
+  <contacts *ngIf="contacts$" [contacts]="contacts$ | async"></contacts>
 </section>

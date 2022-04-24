@@ -1,5 +1,4 @@
 <section class="contacts-container">
-    <p>Hello Contacts</p>
-    <contact-preview ></contact-preview>
+    <contact-preview *ngFor="let contact of contacts" [contact] = "contact"></contact-preview>
 </section>
 
