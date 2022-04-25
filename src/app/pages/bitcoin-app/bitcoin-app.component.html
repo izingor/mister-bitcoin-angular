@@ -1,15 +1,9 @@
 <section class="app-height container">
-  <user></user>
-  <contact-details
-    *ngIf="selectedContactId; else contactsList"
-    [contactId]="selectedContactId"
-    (closeDetails)="selectedContactId = ''"
-  ></contact-details>
-  <ng-template #contactsList>
-    <contacts-list
-      (onSelect)="selectedContactId = $event"
-      [contacts]="contacts$ | async"
-    ></contacts-list>
-  </ng-template>
-  <charts></charts>
+    <user></user>
+    <contact-details *ngIf="selectedContactId; else contactsList" [contactId]="selectedContactId"
+        (closeDetails)="selectedContactId = ''"></contact-details>
+    <ng-template #contactsList>
+        <contacts-list (onSelect)="selectedContactId = $event" [contacts]="contacts$ | async"></contacts-list>
+    </ng-template>
+    <charts></charts>
 </section>
