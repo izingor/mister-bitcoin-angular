@@ -14,8 +14,7 @@ export class ChartsComponent implements OnInit {
 
   ngOnInit(): any {
     this.contactService.getRates().subscribe((res) => {
-      this.rates = res
-      
+      this.rates = res;
     });
   }
 }

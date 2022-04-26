@@ -19,13 +19,13 @@
 
 
 
-            img:not(:last-child) {
+            a:not(:last-child) {
                 margin-right: 50px;
 
 
             }
 
-            img:hover {
+            a:hover {
                 transform: scale(1.1);
                 cursor: pointer;
 
